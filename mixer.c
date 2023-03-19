@@ -9,7 +9,6 @@
 #include "pico/audio_i2s.h"
 #include <string.h>
 #include "hardware/dma.h"
-#include "pico/audio_i2s.h"
 #include <math.h>
 #if PICO_ON_DEVICE
 #include "hardware/clocks.h"
