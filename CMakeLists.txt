@@ -5,7 +5,9 @@ if (NOT TARGET i2s_audio_mixer)
             ${CMAKE_CURRENT_LIST_DIR}/mixer.c
     )
 
-    target_include_directories(i2s_audio_mixer INTERFACE ${CMAKE_CURRENT_LIST_DIR})
+    target_include_directories(i2s_audio_mixer INTERFACE
+            ${CMAKE_CURRENT_LIST_DIR}
+    )
 
     target_link_libraries(i2s_audio_mixer INTERFACE
         pico_stdlib
@@ -13,5 +15,3 @@ if (NOT TARGET i2s_audio_mixer)
         pico_audio_i2s
     )
 endif()
-
-### library file, tbf
