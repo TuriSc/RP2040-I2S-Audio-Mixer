@@ -1,6 +1,10 @@
 #ifndef MIXER_H
 #define MIXER_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define BUFFER_SIZE 256
 #define AUDIO_MAX_SOURCES 4
 
@@ -24,5 +28,9 @@ void audio_source_stop(int source_id);
 void audio_source_set_volume(int source_id, uint16_t volume);
 struct audio_buffer_pool *init_audio();
 void audio_i2s_step(struct audio_buffer_pool *ap);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* MIXER_H */
