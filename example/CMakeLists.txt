@@ -23,10 +23,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 target_compile_definitions(${PROJECT_NAME} PRIVATE
         # compile time configuration of I2S
         PICO_AUDIO_I2S_MONO_INPUT=1
-        # PICO_AUDIO_I2S_DATA_PIN=28
-        # PICO_AUDIO_I2S_CLOCK_PIN_BASE=26
         )
 
 pico_add_extra_outputs(${PROJECT_NAME})
 
-### example, to be fixed
+pico_enable_stdio_usb(${PROJECT_NAME} 1)
