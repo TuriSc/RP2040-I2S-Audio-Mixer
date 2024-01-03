@@ -5,12 +5,12 @@
 extern "C" {
 #endif
 
-#define BUFFER_SIZE 256
-#define AUDIO_MAX_SOURCES 4
+#define BUFFER_SIZE 1024
+#define AUDIO_MAX_SOURCES 6
 
 struct MIXER_SOURCE {
   const uint16_t *samples;
-  int len;//TODO different?
+  int len;
   int loop_start;
   int pos;
   bool active;
@@ -26,8 +26,8 @@ int audio_play_once(const uint16_t *samples, int len);
 int audio_play_loop(const uint16_t *samples, int len, int loop_start);
 void audio_source_stop(int source_id);
 void audio_source_set_volume(int source_id, uint16_t volume);
-struct audio_buffer_pool *init_audio();
-void audio_i2s_step(struct audio_buffer_pool *ap);
+void mixer_init(uint8_t max_channels);
+void audio_i2s_step();
 
 #ifdef __cplusplus
 }
